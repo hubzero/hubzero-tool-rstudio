@@ -1,0 +1,10 @@
+#!/bin/sh
+
+/usr/bin/invoke_app "$@" -t rstudio \
+    -u R-3.2.1 \
+    -u rstudio-server-1.0.44 \
+    -u wrwroxy-0.1 \
+    -w none \
+    -c "xview -fullscreen -onroot @tool/data/Rlogo-1.png" \
+    -c "wrwroxy --listenHost 0.0.0.0 --listenPort 8000 --forwardHost 127.0.0.1 --forwardPort 8001 --stream-log --logfile /dev/null" \
+    -C "rserver --server-working-dir ${HOME} --server-user ${USER} --www-port 8001"
