@@ -1,7 +1,7 @@
 #!/bin/sh
 
 /usr/bin/invoke_app "$@" -t rstudio \
-    -u R-3.2.1 \
+    -u R-3.2.5 \
     -u rstudio-server-1.0.44 \
     -u wrwroxy-0.1 \
     -w none \
