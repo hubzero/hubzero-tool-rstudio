@@ -4,7 +4,6 @@
     -u R-3.4.0 \
     -u rstudio-server-1.0.143 \
     -u wrwroxy-0.1 \
-    -w none \
-    -c "xview -fullscreen -onroot \${R_LOGO_PATH}" \
-    -c "wrwroxy --stream-log --logfile /dev/null" \
+    -w headless \
+    -c "wrwroxy --listenHost 0.0.0.0 --listenPort 8000 --forwardHost 127.0.0.1 --forwardPort 8001 --stream-log --logfile /dev/null" \
     -C "rserver --server-working-dir ${HOME} --server-user ${USER} --www-port 8001"
